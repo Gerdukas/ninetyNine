@@ -23,9 +23,12 @@ public class Card  {
 		//the number of the card
 		this.myNumber  = aNumber;
 	}
+        
+        public int getNumber(){
+        return myNumber;}
 	
 	// return the number of the card
-	public int getNumber() {
+	public int getCardValue() {
             int ruleNumber=0;
             switch(this.myNumber){
                 case 2:
