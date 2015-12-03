@@ -36,6 +36,9 @@ public class Player {
 	public void minusToken(){
             numTokens--;
 	}
+        public String getName(){
+            return name;
+        }
         
 	public void discardCard(Card oldCard, Card newCard){
             hand.set(hand.indexOf(oldCard), newCard);
