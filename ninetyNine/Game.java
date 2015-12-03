@@ -51,6 +51,11 @@ public class Game extends javax.swing.JFrame {
         jButton7.setText(players.get(2).hand.get(0).toString());
         jButton8.setText(players.get(2).hand.get(1).toString());
         jButton9.setText(players.get(2).hand.get(2).toString());
+        
+        //set names
+        jLabel2.setText(players.get(0).getName());
+        jLabel3.setText(players.get(1).getName());
+        jLabel4.setText(players.get(2).getName());
     }
 
     /**
@@ -84,7 +89,6 @@ public class Game extends javax.swing.JFrame {
         jButton1.setFont(new java.awt.Font("Comic Sans MS", 1, 12)); // NOI18N
         jButton1.setText("jButton1");
         jButton1.setBorder(javax.swing.BorderFactory.createMatteBorder(2, 2, 2, 2, new java.awt.Color(0, 0, 0)));
-        jButton1.setSize(new java.awt.Dimension(100, 30));
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);
@@ -95,7 +99,6 @@ public class Game extends javax.swing.JFrame {
         jButton2.setFont(new java.awt.Font("Comic Sans MS", 1, 12)); // NOI18N
         jButton2.setText("jButton2");
         jButton2.setBorder(javax.swing.BorderFactory.createMatteBorder(2, 2, 2, 2, new java.awt.Color(0, 0, 0)));
-        jButton2.setSize(new java.awt.Dimension(100, 30));
         jButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton2ActionPerformed(evt);
@@ -106,7 +109,6 @@ public class Game extends javax.swing.JFrame {
         jButton3.setFont(new java.awt.Font("Comic Sans MS", 1, 12)); // NOI18N
         jButton3.setText("jButton3");
         jButton3.setBorder(javax.swing.BorderFactory.createMatteBorder(2, 2, 2, 2, new java.awt.Color(0, 0, 0)));
-        jButton3.setSize(new java.awt.Dimension(100, 30));
         jButton3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton3ActionPerformed(evt);
@@ -121,7 +123,6 @@ public class Game extends javax.swing.JFrame {
         jButton4.setFont(new java.awt.Font("Comic Sans MS", 1, 12)); // NOI18N
         jButton4.setText("jButton4");
         jButton4.setBorder(javax.swing.BorderFactory.createMatteBorder(2, 2, 2, 2, new java.awt.Color(0, 0, 0)));
-        jButton4.setSize(new java.awt.Dimension(100, 30));
         jButton4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton4ActionPerformed(evt);
@@ -132,7 +133,6 @@ public class Game extends javax.swing.JFrame {
         jButton5.setFont(new java.awt.Font("Comic Sans MS", 1, 12)); // NOI18N
         jButton5.setText("jButton5");
         jButton5.setBorder(javax.swing.BorderFactory.createMatteBorder(2, 2, 2, 2, new java.awt.Color(0, 0, 0)));
-        jButton5.setSize(new java.awt.Dimension(100, 30));
         jButton5.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton5ActionPerformed(evt);
@@ -143,7 +143,6 @@ public class Game extends javax.swing.JFrame {
         jButton6.setFont(new java.awt.Font("Comic Sans MS", 1, 12)); // NOI18N
         jButton6.setText("jButton6");
         jButton6.setBorder(javax.swing.BorderFactory.createMatteBorder(2, 2, 2, 2, new java.awt.Color(0, 0, 0)));
-        jButton6.setSize(new java.awt.Dimension(100, 30));
         jButton6.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton6ActionPerformed(evt);
@@ -154,7 +153,6 @@ public class Game extends javax.swing.JFrame {
         jButton7.setFont(new java.awt.Font("Comic Sans MS", 1, 12)); // NOI18N
         jButton7.setText("jButton7");
         jButton7.setBorder(javax.swing.BorderFactory.createMatteBorder(2, 2, 2, 2, new java.awt.Color(0, 0, 0)));
-        jButton7.setSize(new java.awt.Dimension(100, 30));
         jButton7.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton7ActionPerformed(evt);
@@ -202,31 +200,33 @@ public class Game extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 391, Short.MAX_VALUE)
-                        .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 156, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 0, Short.MAX_VALUE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addGap(0, 0, Short.MAX_VALUE)
-                        .addComponent(jButton7, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(jButton8, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
                         .addComponent(jLabel3)
                         .addGap(33, 33, 33)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
-                                .addComponent(jButton5, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(204, 204, 204)
-                                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(jButton6, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(layout.createSequentialGroup()
                                 .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED, 30, Short.MAX_VALUE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(18, 18, 18)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                     .addComponent(jButton2, javax.swing.GroupLayout.DEFAULT_SIZE, 130, Short.MAX_VALUE)
-                                    .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))))
+                                    .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addComponent(jButton5, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGap(204, 204, 204)
+                                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addComponent(jButton6, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGap(0, 153, Short.MAX_VALUE))))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                .addComponent(jButton7, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(18, 18, 18)
+                                .addComponent(jButton8, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(jLabel4, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 156, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -320,7 +320,7 @@ public class Game extends javax.swing.JFrame {
             Object[] options = {"-10", "+10"};
             int n = JOptionPane.showOptionDialog(this,
                     "Add 10 or minus 10?",
-                    "Title of the question",
+                    " ",
                     JOptionPane.YES_NO_CANCEL_OPTION,
                     JOptionPane.QUESTION_MESSAGE,
                     null,
@@ -335,14 +335,53 @@ public class Game extends javax.swing.JFrame {
             value = card.getCardValue();
         }
         total += value;
-
-        jLabel1.setText(String.valueOf(total));
-        // 2. discard the card from player's hand and draw a new card.
-        Card newCard = myDeck.dealNextCard();
-        p.discardCard(card, newCard);
-        // 3. display the new card value as the button's text.
-        button.setText(newCard.toString());
-
+        if(total<99){
+            jLabel1.setText(String.valueOf(total));
+            // 2. discard the card from player's hand and draw a new card.
+            Card newCard = myDeck.dealNextCard();
+            p.discardCard(card, newCard);
+            // 3. display the new card value as the button's text.
+            button.setText(newCard.toString());
+        }
+        else if(total ==99){
+            jLabel1.setText(String.valueOf(total));
+            Object[] options = {"Start new game", "Exit game"};
+            int n= JOptionPane.showOptionDialog(this,
+                     p.getName() +" is the winner!",
+                    "We have a winner",
+                    JOptionPane.YES_NO_CANCEL_OPTION,
+                    JOptionPane.QUESTION_MESSAGE,
+                    null,
+                    options,
+                    options[1]);
+            if(n==1){
+                System.exit(0);
+                
+            }
+            else if(n==0){
+               new Game().setVisible(true);
+            }
+        }
+        else{
+            jLabel1.setText(String.valueOf(total));
+            Object[] options = {"Start new game", "Exit game"};
+            int n= JOptionPane.showOptionDialog(this,
+                     p.getName() +" loses!",
+                    "Game over",
+                    JOptionPane.YES_NO_CANCEL_OPTION,
+                    JOptionPane.QUESTION_MESSAGE,
+                    null,
+                    options,
+                    options[1]);
+            if(n==1){
+                System.exit(0);
+                
+            }
+            else if(n==0){
+                new Game().setVisible(true);
+            }
+        }
+            
     }
 
     /**
