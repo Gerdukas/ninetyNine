@@ -51,7 +51,7 @@ public class Game extends javax.swing.JFrame {
         jButton7.setText(players.get(2).hand.get(0).toString());
         jButton8.setText(players.get(2).hand.get(1).toString());
         jButton9.setText(players.get(2).hand.get(2).toString());
-        
+
         //set names
         jLabel2.setText(players.get(0).getName());
         jLabel3.setText(players.get(1).getName());
@@ -331,57 +331,70 @@ public class Game extends javax.swing.JFrame {
             } else if (n == 1) {
                 value = 10;
             }
+        } else if (card.getNumber() == 1) {
+            Object[] options = {"11", "1"};
+            int n = JOptionPane.showOptionDialog(this,
+                    "Add 1 or add 11?",
+                    " ",
+                    JOptionPane.YES_NO_CANCEL_OPTION,
+                    JOptionPane.QUESTION_MESSAGE,
+                    null,
+                    options,
+                    options[1]);
+            if (n == 0) {
+                value = 11;
+            } else if (n == 1) {
+                value = 1;
+            }
         } else {
             value = card.getCardValue();
         }
+
         total += value;
-        if(total<99){
+
+        if (total < 99) {
             jLabel1.setText(String.valueOf(total));
             // 2. discard the card from player's hand and draw a new card.
             Card newCard = myDeck.dealNextCard();
             p.discardCard(card, newCard);
             // 3. display the new card value as the button's text.
             button.setText(newCard.toString());
-        }
-        else if(total ==99){
+        } else if (total == 99) {
             jLabel1.setText(String.valueOf(total));
             Object[] options = {"Start new game", "Exit game"};
-            int n= JOptionPane.showOptionDialog(this,
-                     p.getName() +" is the winner!",
+            int n = JOptionPane.showOptionDialog(this,
+                    p.getName() + " is the winner!",
                     "We have a winner",
                     JOptionPane.YES_NO_CANCEL_OPTION,
                     JOptionPane.QUESTION_MESSAGE,
                     null,
                     options,
                     options[1]);
-            if(n==1){
+            if (n == 1) {
                 System.exit(0);
-                
+
+            } else if (n == 0) {
+                new Game().setVisible(true);
             }
-            else if(n==0){
-               new Game().setVisible(true);
-            }
-        }
-        else{
+        } else {
             jLabel1.setText(String.valueOf(total));
             Object[] options = {"Start new game", "Exit game"};
-            int n= JOptionPane.showOptionDialog(this,
-                     p.getName() +" loses!",
+            int n = JOptionPane.showOptionDialog(this,
+                    p.getName() + " loses!",
                     "Game over",
                     JOptionPane.YES_NO_CANCEL_OPTION,
                     JOptionPane.QUESTION_MESSAGE,
                     null,
                     options,
                     options[1]);
-            if(n==1){
+            if (n == 1) {
                 System.exit(0);
-                
-            }
-            else if(n==0){
+
+            } else if (n == 0) {
                 new Game().setVisible(true);
             }
         }
-            
+
     }
 
     /**
