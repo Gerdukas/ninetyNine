@@ -26,7 +26,50 @@ public class Card  {
 	
 	// return the number of the card
 	public int getNumber() {
-		return myNumber;
+            int ruleNumber=0;
+            switch(this.myNumber){
+                case 2:
+			ruleNumber= 2;
+			break;
+		case 3: 
+			ruleNumber= 3;
+			break;
+		case 4:
+			ruleNumber= 0;
+			break;
+		case 5: 
+			ruleNumber= 5;
+			break;
+		case 6:
+			ruleNumber= 6;
+			break;
+		case 7: 
+			ruleNumber= 7;
+			break;
+		case 8:
+			ruleNumber= 8;
+			break;
+		case 9: 
+			ruleNumber= 99;
+			break;
+		case 10:
+			ruleNumber=10;
+			break;
+		case 11: 
+			ruleNumber= 10;	
+			break;
+		case 12:
+			ruleNumber= 10;
+			break;
+		case 13: 
+			ruleNumber= 0;
+			break;
+		case 1:
+			ruleNumber= 11;
+                        break;
+            }
+            
+		return ruleNumber;
 	}
 	
 	public String toString() {
