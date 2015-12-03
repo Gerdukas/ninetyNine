@@ -36,35 +36,35 @@ public class Card  {
 		switch(this.myNumber){
 		
 		case 2:
-			numStr = "Two";
+			numStr = "2";
 			break;
 			
 		case 3: 
-			numStr = "Three";
+			numStr = "3";
 			break;
 			
 		case 4:
-			numStr = "Four";
+			numStr = "4";
 			break;
 			
 		case 5: 
-			numStr = "Five";
+			numStr = "5";
 			break;
 			
 		case 6:
-			numStr = "Six";
+			numStr = "6";
 			break;
 			
 		case 7: 
-			numStr = "Seven";
+			numStr = "7";
 			break;
 			
 		case 8:
-			numStr = "Eight";
+			numStr = "8";
 			break;
 			
 		case 9: 
-			numStr = "Nine";
+			numStr = "9";
 			break;
 			
 		case 10:
