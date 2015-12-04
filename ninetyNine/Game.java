@@ -1,17 +1,8 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 
 import java.util.ArrayList;
 import javax.swing.JOptionPane;
 import javax.swing.JButton;
 
-/**
- *
- * @author bo
- */
 public class Game extends javax.swing.JFrame {
 
     public Deck myDeck = new Deck(1, true);
@@ -19,12 +10,11 @@ public class Game extends javax.swing.JFrame {
     private int total = 0;
     private ArrayList<Player> players = new ArrayList<Player>();
 
-    /**
-     * Creates new form Game
-     */
     public Game() {
         initComponents();
         int i=0;
+        
+        //ask players to enter their name
         while(i<3){
             String input= JOptionPane.showInputDialog("Enter Player name: ");
             if(input.length() >0){
@@ -33,16 +23,14 @@ public class Game extends javax.swing.JFrame {
             }
         }
 
-        //players.add(new Player("Gerda"));
-        //players.add(new Player("Tillah"));
-        //players.add(new Player("Andrew"));
-
+        // players get 3 cards at the beginning
         for (Player p : players) {
             p.addCard(myDeck.dealNextCard());
             p.addCard(myDeck.dealNextCard());
             p.addCard(myDeck.dealNextCard());
         }
 
+        // updates game score
         jLabel1.setText(String.valueOf(total));
 
         //player1 hand
@@ -66,6 +54,7 @@ public class Game extends javax.swing.JFrame {
         jLabel4.setText(players.get(2).getName());
     }
 
+    //method enable all buttons
     private void enablePlayer(Player player) {
         jButton1.setEnabled(false);
         jButton2.setEnabled(false);
@@ -77,21 +66,23 @@ public class Game extends javax.swing.JFrame {
         jButton8.setEnabled(false);
         jButton9.setEnabled(false);
 
+        
+        //assign buttons to players
         int playerIndex = players.indexOf(player);
         switch (playerIndex) {
-            case 0:
+            case 0:                     // 1player buttons
                 jButton1.setEnabled(true);
                 jButton2.setEnabled(true);
                 jButton3.setEnabled(true);
                 break;
 
-            case 1:
+            case 1:                     //2 player buttons
                 jButton4.setEnabled(true);
                 jButton5.setEnabled(true);
                 jButton6.setEnabled(true);
                 break;
 
-            case 2:
+            case 2:                     //3 player buttons
                 jButton7.setEnabled(true);
                 jButton8.setEnabled(true);
                 jButton9.setEnabled(true);
@@ -329,6 +320,7 @@ public class Game extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    //if card selected replace it with new card
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         performAction(players.get(0), players.get(0).hand.get(0), jButton1);
     }//GEN-LAST:event_jButton1ActionPerformed
@@ -369,6 +361,8 @@ public class Game extends javax.swing.JFrame {
 
         // 1. add the value of button 1 to the total and update the label to display the new total
         int value = 0;
+        
+        // if player selects 10 he has option to add or minus 10 to total
         if (card.getNumber() == 10) {
             Object[] options = {"-10", "+10"};
             int n = JOptionPane.showOptionDialog(this,
@@ -384,6 +378,7 @@ public class Game extends javax.swing.JFrame {
             } else if (n == 1) {
                 value = 10;
             }
+           // if player selects ACE he has option to add 1 or 11 to total 
         } else if (card.getNumber() == 1) {
             Object[] options = {"11", "1"};
             int n = JOptionPane.showOptionDialog(this,
@@ -400,6 +395,7 @@ public class Game extends javax.swing.JFrame {
                 value = 1;
             }
         } 
+         // if player selects 4 it reverts turns
         else if (card.getNumber() == 4) {
          clockwise =! clockwise;
         } 
@@ -407,8 +403,10 @@ public class Game extends javax.swing.JFrame {
             value = card.getCardValue();
         }
 
+        //total game value
         total += value;
 
+        //game ending
         if (total < 99) {
             jLabel1.setText(String.valueOf(total));
             // 2. discard the card from player's hand and draw a new card.
@@ -416,7 +414,7 @@ public class Game extends javax.swing.JFrame {
             p.discardCard(card, newCard);
             // 3. display the new card value as the button's text.
             button.setText(newCard.toString());
-        } else if (total == 99) {
+        } else if (total == 99) { // option to start new game or exit game after winner announced 
             jLabel1.setText(String.valueOf(total));
             Object[] options = {"Start new game", "Exit game"};
             int n = JOptionPane.showOptionDialog(this,
@@ -433,7 +431,7 @@ public class Game extends javax.swing.JFrame {
             } else if (n == 0) {
                 new Game().setVisible(true);
             }
-        } else {
+        } else {  //// option to start new game or exit game after losser announced
             jLabel1.setText(String.valueOf(total));
             Object[] options = {"Start new game", "Exit game"};
             int n = JOptionPane.showOptionDialog(this,
@@ -454,6 +452,8 @@ public class Game extends javax.swing.JFrame {
 
         int indexPlayer = players.indexOf(p);
 
+        
+        // player turns
         if (clockwise == true) {
             if (indexPlayer + 1 > players.size() - 1) {
                 indexPlayer = 0;

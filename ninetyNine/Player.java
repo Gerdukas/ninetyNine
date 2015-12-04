@@ -28,14 +28,6 @@ public class Player {
 	public void addCard(Card card) {
             hand.add(card);
 	}
-        
-	public int getTokens(){
-            return numTokens;
-	}
-        
-	public void minusToken(){
-            numTokens--;
-	}
         public String getName(){
             return name;
         }

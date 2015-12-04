@@ -27,7 +27,7 @@ public class Card  {
         public int getNumber(){
         return myNumber;}
 	
-	// return the number of the card
+	// return the value of the card
 	public int getCardValue() {
             int ruleNumber=0;
             switch(this.myNumber){
@@ -78,6 +78,7 @@ public class Card  {
 	public String toString() {
 		
 		String numStr = "Error";
+                // return the number of the card
 		
 		switch(this.myNumber){
 		
