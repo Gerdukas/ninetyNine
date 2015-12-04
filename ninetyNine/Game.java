@@ -399,7 +399,11 @@ public class Game extends javax.swing.JFrame {
             } else if (n == 1) {
                 value = 1;
             }
-        } else {
+        } 
+        else if (card.getNumber() == 4) {
+         clockwise =! clockwise;
+        } 
+        else {
             value = card.getCardValue();
         }
 
