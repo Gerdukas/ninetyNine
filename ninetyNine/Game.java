@@ -58,6 +58,45 @@ public class Game extends javax.swing.JFrame {
         jLabel4.setText(players.get(2).getName());
     }
 
+    private void enablePlayer(Player player) {
+        jButton1.setEnabled(false);
+        jButton2.setEnabled(false);
+        jButton3.setEnabled(false);
+        jButton4.setEnabled(false);
+        jButton5.setEnabled(false);
+        jButton6.setEnabled(false);
+        jButton7.setEnabled(false);
+        jButton8.setEnabled(false);
+        jButton9.setEnabled(false);
+
+        int playerIndex = players.indexOf(player);
+        switch (playerIndex) {
+            case 0:
+                jButton1.setEnabled(true);
+                jButton2.setEnabled(true);
+                jButton3.setEnabled(true);
+                break;
+
+            case 1:
+                jButton4.setEnabled(true);
+                jButton5.setEnabled(true);
+                jButton6.setEnabled(true);
+                break;
+
+            case 2:
+                jButton7.setEnabled(true);
+                jButton8.setEnabled(true);
+                jButton9.setEnabled(true);
+                break;
+
+            default:
+                System.err.println(" Error");
+                break;
+
+        }
+
+    }
+
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -123,6 +162,7 @@ public class Game extends javax.swing.JFrame {
         jButton4.setFont(new java.awt.Font("Comic Sans MS", 1, 12)); // NOI18N
         jButton4.setText("jButton4");
         jButton4.setBorder(javax.swing.BorderFactory.createMatteBorder(2, 2, 2, 2, new java.awt.Color(0, 0, 0)));
+        jButton4.setEnabled(false);
         jButton4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton4ActionPerformed(evt);
@@ -133,6 +173,7 @@ public class Game extends javax.swing.JFrame {
         jButton5.setFont(new java.awt.Font("Comic Sans MS", 1, 12)); // NOI18N
         jButton5.setText("jButton5");
         jButton5.setBorder(javax.swing.BorderFactory.createMatteBorder(2, 2, 2, 2, new java.awt.Color(0, 0, 0)));
+        jButton5.setEnabled(false);
         jButton5.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton5ActionPerformed(evt);
@@ -143,6 +184,7 @@ public class Game extends javax.swing.JFrame {
         jButton6.setFont(new java.awt.Font("Comic Sans MS", 1, 12)); // NOI18N
         jButton6.setText("jButton6");
         jButton6.setBorder(javax.swing.BorderFactory.createMatteBorder(2, 2, 2, 2, new java.awt.Color(0, 0, 0)));
+        jButton6.setEnabled(false);
         jButton6.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton6ActionPerformed(evt);
@@ -153,6 +195,7 @@ public class Game extends javax.swing.JFrame {
         jButton7.setFont(new java.awt.Font("Comic Sans MS", 1, 12)); // NOI18N
         jButton7.setText("jButton7");
         jButton7.setBorder(javax.swing.BorderFactory.createMatteBorder(2, 2, 2, 2, new java.awt.Color(0, 0, 0)));
+        jButton7.setEnabled(false);
         jButton7.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton7ActionPerformed(evt);
@@ -163,6 +206,7 @@ public class Game extends javax.swing.JFrame {
         jButton8.setFont(new java.awt.Font("Comic Sans MS", 1, 12)); // NOI18N
         jButton8.setText("jButton8");
         jButton8.setBorder(javax.swing.BorderFactory.createMatteBorder(2, 2, 2, 2, new java.awt.Color(0, 0, 0)));
+        jButton8.setEnabled(false);
         jButton8.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton8ActionPerformed(evt);
@@ -172,6 +216,7 @@ public class Game extends javax.swing.JFrame {
         jButton9.setFont(new java.awt.Font("Comic Sans MS", 1, 12)); // NOI18N
         jButton9.setText("jButton9");
         jButton9.setBorder(javax.swing.BorderFactory.createMatteBorder(2, 2, 2, 2, new java.awt.Color(0, 0, 0)));
+        jButton9.setEnabled(false);
         jButton9.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton9ActionPerformed(evt);
@@ -395,6 +440,25 @@ public class Game extends javax.swing.JFrame {
             }
         }
 
+        int indexPlayer = players.indexOf(p);
+
+        if (clockwise == true) {
+            if (indexPlayer + 1 > players.size() - 1) {
+                indexPlayer = 0;
+            } else {
+                indexPlayer++;
+            }
+        } else {
+            if (indexPlayer - 1 < 0) {
+                indexPlayer = players.size() - 1;
+            } else {
+                indexPlayer--;
+            }
+        }
+        
+        Player nextPlayer = players.get(indexPlayer);
+
+        enablePlayer(nextPlayer);
     }
 
     /**
@@ -411,16 +475,24 @@ public class Game extends javax.swing.JFrame {
                 if ("Nimbus".equals(info.getName())) {
                     javax.swing.UIManager.setLookAndFeel(info.getClassName());
                     break;
+
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(Game.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Game.class
+                    .getName()).log(java.util.logging.Level.SEVERE, null, ex);
+
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(Game.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Game.class
+                    .getName()).log(java.util.logging.Level.SEVERE, null, ex);
+
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(Game.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Game.class
+                    .getName()).log(java.util.logging.Level.SEVERE, null, ex);
+
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(Game.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Game.class
+                    .getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
 
