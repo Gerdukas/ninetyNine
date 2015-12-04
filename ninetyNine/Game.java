@@ -24,10 +24,18 @@ public class Game extends javax.swing.JFrame {
      */
     public Game() {
         initComponents();
+        int i=0;
+        while(i<3){
+            String input= JOptionPane.showInputDialog("Enter Player name: ");
+            if(input.length() >0){
+                players.add(new Player(input));
+                i++;
+            }
+        }
 
-        players.add(new Player("Gerda"));
-        players.add(new Player("Tillah"));
-        players.add(new Player("Andrew"));
+        //players.add(new Player("Gerda"));
+        //players.add(new Player("Tillah"));
+        //players.add(new Player("Andrew"));
 
         for (Player p : players) {
             p.addCard(myDeck.dealNextCard());
