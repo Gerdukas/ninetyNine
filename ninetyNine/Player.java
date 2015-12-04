@@ -1,5 +1,6 @@
 import java.util.ArrayList;
 
+
 public class Player {
 	//public boolean aceLow= true;
 	//public boolean tenLow=true;
@@ -36,7 +37,6 @@ public class Player {
             numTokens--;
 	}
         public String getName(){
-           
             return name;
         }
         

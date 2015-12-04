@@ -75,7 +75,6 @@ public class Card  {
 		return ruleNumber;
 	}
 	
-        
 	public String toString() {
 		
 		String numStr = "Error";
